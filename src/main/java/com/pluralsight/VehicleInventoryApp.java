@@ -12,12 +12,12 @@ public class VehicleInventoryApp {
         System.out.println("What do you want to do?");
 
         //create an array of capable of holding up to 20 vehicles
-       Vehicle[] inventory = new Vehicle[20];
+        Vehicle[] inventory = new Vehicle[20];
 
         //create a variable that tells me how many vehicles are in the array right now
-       int numberOfVehiclesInInventory = inventory.length;
+        int numberOfVehiclesInInventory = inventory.length;
 
-       //Create 6 vehicles
+        //Create 6 vehicles
         Vehicle vehicle1 = new Vehicle(100, "Miata", "Blue", 100000);
         Vehicle vehicle2 = new Vehicle(124, "Mustang", "Red", 75000);
         Vehicle vehicle3 = new Vehicle(125, "Camry", "White", 50000);
@@ -46,7 +46,7 @@ public class VehicleInventoryApp {
 
         // focus on menu items 1,2, and 5
         boolean appRunning = true;
-        while(appRunning){
+        while (appRunning) {
 
             //Create the rules
             System.out.println("1 - List all vehicles");
@@ -64,27 +64,47 @@ public class VehicleInventoryApp {
 
 
 
-            switch (command){
-                case 1 -> listAllVehicles(inventory);
-                case 5 -> addVehicle(scanner,inventory);
-                case 6 -> System.out.println("Invalid command");
+
+            switch (command) {
+                case 1:
+                    listAllVehicles(inventory);
+                    break;
+
+                case 2 :
+                    searchByMakeAndModel(inventory);
+                    break;
+
+                case 3 :
+                    System.out.println("sou");
+                    break;
+                case 4:
+                    System.out.println("sout");
+                case 5:
+                    addVehicle(scanner, inventory);
+                    break;
+                case 6 :
+                    System.out.println("Invalid command");
+                    break;
             }
 
-            for(Vehicle type : inventory){
+            for (Vehicle type : inventory) {
                 System.out.println();
             }
 
+            for (Vehicle makeModel : inventory){
+                System.out.println();
+            }
 
 
         }
 
 
-
-
     }
 
 
-    public static void addVehicle(Scanner theScanner, Vehicle[] inventory){
+    public static void getFullInventory(Scanner scanner, Vehicle inventory){}
+
+    public static void addVehicle(Scanner theScanner, Vehicle[] inventory) {
         // ask all the questions
         System.out.println("Please enter the vehicles id");
         int id = theScanner.nextInt();
@@ -103,9 +123,50 @@ public class VehicleInventoryApp {
 
     }
 
-public static void listAllVehicles (Vehicle[] inventory){
-    System.out.println("make : " + inventory[0].getMakeModel());
-}
+    public static void listAllVehicles(Vehicle[] inventory) {
+        System.out.println("Make : " + inventory[0].getMakeModel());
+        System.out.println("Make : " + inventory[1].getMakeModel());
+        System.out.println("Make : " + inventory[2].getMakeModel());
+        System.out.println("Make : " + inventory[3].getMakeModel());
+        System.out.println("Make : " + inventory[4].getMakeModel());
+        System.out.println("Make : " + inventory[5].getMakeModel());
 
+
+    }
+
+
+    public static void searchByMakeAndModel (Vehicle[] inventory){
+       //Import scanner
+        Scanner inputTwo = new Scanner(System.in);
+
+        //Add for loop for input
+        for (Vehicle makeModel : inventory){
+            System.out.println("What is the make/model you are looking for?");
+            inputTwo.nextLine();
+
+            //Add if statement
+            if(inputTwo.equals(inventory[0])){
+                System.out.println("Make/Model : " + inventory[0].getVehicleId() + "\n" +
+                        " " + inventory[0].getMakeModel());
+            } else if(inputTwo.equals(inventory[1])){
+                System.out.println("Make/Model : " + inventory[1].getVehicleId() + "\n" +
+                        " " + inventory[1].getMakeModel());
+            } else if(inputTwo.equals(inventory[2])){
+                System.out.println("Make/Model : " + inventory[2].getVehicleId() + "\n" +
+                        " " + inventory[2].getMakeModel());
+            } else if(inputTwo.equals(inventory[3])){
+                System.out.println("Make/Model : " + inventory[3].getVehicleId() + "\n" +
+                        " " + inventory[3].getMakeModel());
+            } else if(inputTwo.equals(inventory[4])){
+                System.out.println("Make/Model : " + inventory[4].getVehicleId() + "\n" +
+                        " " + inventory[4].getMakeModel());
+            } else if(inputTwo.equals(inventory[5])){
+                System.out.println("Make/Model : " + inventory[5].getVehicleId() + "\n" +
+                        " " + inventory[5].getMakeModel());
+            }
+            inputTwo.close();
+        }
+
+    }
 
 }

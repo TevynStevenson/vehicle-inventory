@@ -15,6 +15,8 @@ public class Vehicle {
         this.vehicleId = vehicleId;
     }
 
+    //
+
     public String getMakeModel() {
         return makeModel;
     }
@@ -22,6 +24,8 @@ public class Vehicle {
     public void setMakeModel(String makeModel) {
         this.makeModel = makeModel;
     }
+
+    //
 
     public String getColor() {
         return color;
@@ -31,6 +35,8 @@ public class Vehicle {
         this.color = color;
     }
 
+    //
+
     public int getOdometer() {
         return odometer;
     }
@@ -39,6 +45,8 @@ public class Vehicle {
         this.odometer = odometer;
     }
 
+    //
+
     public double getPrice() {
         return price;
     }
@@ -46,6 +54,8 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    //
 
     public Vehicle(long vehicleId, String makeModel, String color, int odometer) {
         this.vehicleId = vehicleId;
